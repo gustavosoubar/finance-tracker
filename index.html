@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Controle Financeiro</h1>
+            <p class="subtitle">Gerencie suas receitas e despesas mensalmente</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Seletor de Mês -->
+            <div class="month-selector">
+                <label for="month">Selecione o mês:</label>
+                <input type="month" id="month">
+            </div>
+
+            <!-- Resumo do Mês -->
+            <div class="summary">
+                <div class="summary-card income">
+                    <h3>Receitas</h3>
+                    <p class="amount" id="totalIncome">R$ 0,00</p>
+                </div>
+                <div class="summary-card expense">
+                    <h3>Despesas</h3>
+                    <p class="amount" id="totalExpense">R$ 0,00</p>
+                </div>
+                <div class="summary-card balance">
+                    <h3>Saldo</h3>
+                    <p class="amount" id="totalBalance">R$ 0,00</p>
+                </div>
+            </div>
+
+            <!-- Formulário para Adicionar Receita -->
+            <div class="form-section">
+                <h2>➕ Adicionar Receita</h2>
+                <div class="form-group">
+                    <input type="text" id="incomeDescription" placeholder="Descrição (ex: Salário)">
+                    <input type="number" id="incomeAmount" placeholder="Valor" step="0.01" min="0">
+                    <button onclick="addIncome()" class="btn btn-income">Adicionar Receita</button>
+                </div>
+            </div>
+
+            <!-- Formulário para Adicionar Despesa -->
+            <div class="form-section">
+                <h2>➖ Adicionar Despesa</h2>
+                <div class="form-group">
+                    <input type="text" id="expenseDescription" placeholder="Descrição (ex: Aluguel)">
+                    <input type="number" id="expenseAmount" placeholder="Valor" step="0.01" min="0">
+                    <button onclick="addExpense()" class="btn btn-expense">Adicionar Despesa</button>
+                </div>
+            </div>
+
+            <!-- Listas de Receitas e Despesas -->
+            <div class="lists-container">
+                <div class="list-section">
+                    <h2>📥 Receitas do Mês</h2>
+                    <ul id="incomeList" class="list"></ul>
+                </div>
+
+                <div class="list-section">
+                    <h2>📤 Despesas do Mês</h2>
+                    <ul id="expenseList" class="list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
